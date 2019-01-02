@@ -31,3 +31,5 @@ class classLcmHcf{
         System.out.println("The LCM of " + varNumMin + " and " + varNumMax + " is " + varLCM);
     }
 }
+
+// ~schoolboyProgrammer v1.0.0

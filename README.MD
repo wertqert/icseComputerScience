@@ -16,7 +16,9 @@ AUTHORS: Monish Singhal aka schoolboyProgrammer
 
 HOW TO REACH ME: Message me on Quora (Monish Singhal) or Hangouts (monishsinghal7@gmail.com)
 
+------------------------------------------------------------------------
 Requisists for commits on the files of the repositry:
+------------------------------------------------------------------------
 1. Every code should begin with an explainatory comment on what is happening in the program.
 2. The classes, objects, files, variables and arrays ahould be appropriately named.
    Classes should begin with class..., all written in lower camel case

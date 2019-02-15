@@ -60,7 +60,6 @@ class classNumbers{
     public static boolean funcArmstrongNum(int varNum){
         int varSumCubes = 0;
         int varTemp = varNum;
-      F
         // Extracts the cube of the last digit (Refer to first and second function for details on this
         while (varTemp > 0) {
             byte varDigit = (byte)(varTemp % 10);

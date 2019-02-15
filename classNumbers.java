@@ -16,14 +16,17 @@ import java.lang.Math;
 */
 import java.util.Scanner;   
 class classNumbers{
+  
     public static boolean funcNeonNum(int varNum){
-        int varSquare = (int)varNum * varNum;
+        int varSquare = (int)varNum * varNum; // Find the square 
         int varSum = 0;
+        // Loop for extracting digits and adding them
         while (varSquare > 0) {
-            int varDigit = varSquare % 10;
-            varSum += varDigit;
-            varSquare /= 10;
+            byte varDigit = (byte)(varSquare % 10); // Extracts the last digit
+            varSum += varDigit; // Adds the digit to a common variable
+            varSquare /= 10; // Truncates the last digit (or) decrements
         }
+        // Return Values
         if (varSum == varNum) {
             return true;
         }
@@ -34,14 +37,18 @@ class classNumbers{
 
     public static boolean funcPalindromeNum(int varNum){
         int varReverse = 0;
-        int varDigit;
+        byte varDigit;
         int varTemp = varNum;
-        while (varTemp != 0) {
-            varDigit = varTemp % 10;
-            varReverse *= 10;
-            varReverse += varDigit;
-            varTemp /= 10;
+      
+        //Loop for reversing the number
+        while (varTemp != 0) { 
+            varDigit = (byte)(varTemp % 10); // Extracts last digit
+            varReverse *= 10 // Multiplies the current value of varReverse with 10
+            varReverse += varDigit; // Adds current value of varReverse to varDigit
+            varTemp /= 10; // Decrements value
         }
+      
+        // Returns value
         if (varReverse == varNum) {
             return true;
         }
@@ -53,11 +60,14 @@ class classNumbers{
     public static boolean funcArmstrongNum(int varNum){
         int varSumCubes = 0;
         int varTemp = varNum;
+      F
+        // Extracts the cube of the last digit (Refer to first and second function for details on this
         while (varTemp > 0) {
-            int varDigit = varTemp % 10;
-            varSumCubes += (int)Math.pow(varDigit, 3);
+            byte varDigit = (byte)(varTemp % 10);
+            varSumCubes += (int)Math.pow(varDigit, 3); // Finds cube of last digit
             varTemp = varTemp / 10;
         }
+        // Returns value
         if (varSumCubes == varNum) {
             return true;
         }
@@ -85,11 +95,13 @@ class classNumbers{
 
     public static boolean funcPerfectNum(int varNum) {
         int varSum = 0;
+        // Finds if the number is a prime number or not
         for (int i = 1; i <= (int)(varNum/2); i++) {
-            if ((varNum % i) == 0) {
-                varSum += i;
+            if ((varNum % i) == 0) { // Checks if the number is divisible or not (Whether remainder is 0 or not)
+                varSum += i; // If it is a factor, adds it to the current value of varSum
             } 
         }
+        // Returns value
         if (varSum == varNum){
             return true;
         }
@@ -110,12 +122,14 @@ class classNumbers{
     public static boolean funcSpyNum(int varNum) {
         short varSum = 0;
         long varProduct = 1;
-        while (varNum > 0) {
-            byte varDigit = (byte)(varNum % 10);
-            varNum /= 10;
-            varSum += varDigit;
-            varProduct *= varDigit;
+        // Calculating sum and product of digits
+        while (varNum > 0) { 
+            byte varDigit = (byte)(varNum % 10); // Extracts last digit
+            varNum /= 10; // Decrements
+            varSum += varDigit; // Sum of digits
+            varProduct *= varDigit; // Product of Digits
         }
+        // Return value
         if (varSum == varProduct) {
             return true;
         } else {
@@ -125,8 +139,9 @@ class classNumbers{
 
     public static boolean funcPronicNum(int varNum) {
         boolean varAns = false;
+        // Loop for checking 
         for (int i = 1; i <= (int)(varNum/2); i++) {
-            if (i*(i+1) == varNum) { 
+            if (i*(i+1) == varNum) { // Checks if it is a product of two consecutive numbers
                 varAns = true;
             }
         }
@@ -134,13 +149,14 @@ class classNumbers{
     }
 
     public static boolean funcNivenNum(int varNum) {
-        int varTemp = varNum, varSum = 0;
+        int varTemp = varNum, varSum = 0; 
+        // Loop for finding sum of digits
         while (varTemp > 0) {
             byte varDigit = (byte)(varTemp % 10);
             varSum += varDigit;
             varTemp /= 10;
         }
-        if (varNum % varSum == 0){
+        if (varNum % varSum == 0){ // Checks if the number is divisible by the sum of letters
             return true;
         }
         else{
@@ -149,18 +165,21 @@ class classNumbers{
     }
 
     public static boolean funcEmirpNum(int varNum) {
-        int varFactors = 1, varFactors1 = 1, varReverse = 0, varTemp = varNum;        
+        int varFactors = 1, varFactors1 = 1, varReverse = 0, varTemp = varNum;    
+        //Loop for finding if a number is prime or not
         for (int i = 1; i < (int)(varNum/2); i++) {
-            if(varNum % i == 0){
-                varFactors++;
+            if(varNum % i == 0){ // Checks if number is divisible by the loop variable
+                varFactors++; // Increments varFactors by 1
             }
         } 
+        // Reverses number (Refer to funcPalindromeNum() for details)
         while (varTemp > 0) {
             byte varDigit = (byte)varTemp % 10;
             varReverse *= 10;
             varReverse += varDigit;
             varTemp /= 10;
         }       
+        // Loop for finding if reverse num is also prime
         for (int i = 1; i < (int)(varNum/2); i++) {
             if(varReverse % i == 0){
                 varFactors1++;
@@ -177,9 +196,11 @@ class classNumbers{
     public static boolean funcDisariumNum(int varNum) {
         int varTemp1 = varNum, varTemp2 = varNum, varSum = 0;
         byte varCount = 0;
+        // Finds out number of digits in a number
         for (; varTemp1 > 0; varTemp1 /= 10) {
             varCount++;
         }
+        // Finds the sum of the digits powered positionally
         for(; varCount > 0; varCount--, varTemp2 /= 10){
             byte varDigit = (byte)(varTemp2 % 10);
             varSum += Math.pow(varDigit, varCount);
@@ -191,6 +212,7 @@ class classNumbers{
         }
     }
 
+    // Function to print without repeating the statement
     public static void funcPrint(int varNum, String varType, boolean varCheck){
         if (varCheck == true) {
             System.out.println(varNum + " is a " + varType + " number");
@@ -201,9 +223,9 @@ class classNumbers{
     }
 
     public static void main(String[] args) throws IOException {
-        BufferedReader objRead = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader objRead = new BufferedReader(new InputStreamReader(System.in)); // Creates object for BufferedReader
         System.out.println("Enter a number : ");
-        int varNum = Integer.parseInt(objRead.readLine());
+        int varNum = Integer.parseInt(objRead.readLine()); // Inputs number
         funcPrint(varNum, "Neon", funcNeonNum(varNum));
         funcPrint(varNum, "Palindrome", funcPalindromeNum(varNum));
         funcPrint(varNum, "Armstrong", funcArmstrongNum(varNum));
@@ -217,3 +239,4 @@ class classNumbers{
         funcPrint(varNum, "Disarium", funcDisariumNum(varNum));
     }
 }
+//~ schoolboyProgrammer v1.0.1

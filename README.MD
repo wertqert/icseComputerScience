@@ -1,7 +1,8 @@
 ------------------------------------------------------------------------
 Hello. This is a repositry for all Vibgyor (and ICSE) students. 
-Slowly, various projects would be put up here. 
-Keep checking for updates ;)
+Slowly, various files would be put up here. 
+This by all means open source and shall remain so.
+Keep checking for updates :wink:	
 ------------------------------------------------------------------------
 
 PROJECT TITLE: ICSE Repositery

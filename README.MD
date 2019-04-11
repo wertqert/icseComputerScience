@@ -33,3 +33,5 @@ Requisists for commits on the files of the repositry:
    This is to ensure the code has high readablility.
 4. You can end your code with your signature.
    For example, my signature is: ~schoolboyProgrammer
+
+[![Analytics](https://ga-beacon.appspot.com/UA-138127709-2/icseComputerScience/readme?pixel)](https://github.com/igrigorik/ga-beacon)
